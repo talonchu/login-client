@@ -11,9 +11,6 @@ angular.module('ng-bolierplate.login')
 		var URL = 'http://localhost:8088/user/login';
 		// return $http.post(URL,data);
 		var headers = {'Content-Type':'application/json'};
-		$http.post(URL,params,headers).success(function(data){
-			alert(data.userName+data.password);
-			console.log(data);
-		});
+		return $http.post(URL,params,headers);
 	};
 }]);
