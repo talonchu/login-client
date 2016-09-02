@@ -29,5 +29,13 @@ angular.module( 'ngBoilerplate', [
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
     }
   });
-});
+})
+
+.service('WhereToService',function($http,$state,$cookies){
+  this.whereTo = function () {
+
+  };
+})
+
+;
 

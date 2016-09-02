@@ -6,7 +6,6 @@ angular.module('ng-bolierplate.login')
 			'userName':username,
 			'password':password
 		};
-		alert(params);
 		// var URL = Routes.buildURL(Routes.login);
 		var URL = 'http://localhost:8088/user/login';
 		// return $http.post(URL,data);
