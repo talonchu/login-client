@@ -1,9 +1,10 @@
 var ngBoilerplate_modules = [
-  'ng-bolierplate.login'
+'ng-bolierplate.login',
+'ng-bolierplate.postLogin.allAccess'
 ];
 
 for (var i in ngBoilerplate_modules) {
-    angular.module(ngBoilerplate_modules[i], []);
+  angular.module(ngBoilerplate_modules[i], []);
 }
 
 angular.module( 'ngBoilerplate', [
@@ -13,8 +14,9 @@ angular.module( 'ngBoilerplate', [
   'ngBoilerplate.about',
   'ui.router',
   'ng-bolierplate.login',
-  'ng-bolierplate.config'
-])
+  'ng-bolierplate.config',
+  'ng-bolierplate.postLogin.allAccess'
+  ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise( 'login' );
@@ -23,7 +25,7 @@ angular.module( 'ngBoilerplate', [
 .run( function run () {
 })
 
-.controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
+.controller( 'AppCtrl', function AppCtrl ( $scope, $location,$state) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
@@ -31,10 +33,15 @@ angular.module( 'ngBoilerplate', [
   });
 })
 
-.service('WhereToService',function($http,$state,$cookies){
+.service('WhereToService',function($http,$state){
   this.whereTo = function () {
-
+    alert(sessionStorage.getItem('userName'));
+    if (sessionStorage.getItem('userName') != null) {
+      var stateToNavigateTo = 'allAccess.step1';
+      $state.go(stateToNavigateTo);
+    }
   };
+
 })
 
 ;
