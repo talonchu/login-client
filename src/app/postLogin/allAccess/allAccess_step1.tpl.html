@@ -1,9 +1,21 @@
-<div class = 'wrapper'>
+<div class="table table-striped">
 	<h2>welcome, {{userName}}</h2>
-	<table>
-		<tr ng-repeat="x in roleDto">
-			<td>{{ x.roleId }}</td>
-			<td>{{ x.roleName }}</td>
-		</tr>
-	</table>
+	<h3 class = 'sub-header'>Your Roles</h3>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>Role Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="x in roleDto">
+					<td>{{ x.roleId }}</td>
+					<td>{{ x.roleName }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 </div>
