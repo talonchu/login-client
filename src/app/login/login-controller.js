@@ -3,7 +3,7 @@ angular.module('ng-bolierplate.login').controller('Login.LoginCtrl', function Lo
 		LoginService.login($scope.username,$scope.password)
 		.success(function(data){
 			var user = JSON.stringify(data);
-			if(user.userName !== ''){
+			if(data !== ""){
 				localStorage.setItem("user" , user);
 				$state.go('allAccess.step1');
 			}

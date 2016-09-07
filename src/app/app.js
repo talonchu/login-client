@@ -1,6 +1,7 @@
 var ngBoilerplate_modules = [
 'ng-bolierplate.login',
-'ng-bolierplate.postLogin.allAccess'
+'ng-bolierplate.postLogin.allAccess',
+'ng-bolierplate.register'
 ];
 
 for (var i in ngBoilerplate_modules) {
@@ -15,7 +16,8 @@ angular.module( 'ngBoilerplate', [
   'ui.router',
   'ng-bolierplate.login',
   'ng-bolierplate.config',
-  'ng-bolierplate.postLogin.allAccess'
+  'ng-bolierplate.postLogin.allAccess',
+  'ng-bolierplate.register'
   ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider) {
