@@ -1,5 +1,4 @@
 angular.module('ng-bolierplate.login')
-
 .service('LoginService',['$http',function($http){
 	this.login = function (username,password){
 		var params = {

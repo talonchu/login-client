@@ -1,13 +1,13 @@
 angular.module('ng-bolierplate.postLogin.allAccess')
 .config(function config($stateProvider, $urlRouterProvider){
-	$stateProvider.state('allAccess', {
+	$stateProvider
+	.state('allAccess', {
 		url: '/post-login/allAccess',
 		views: {
 			"login-content": {
 				template: '<div ui-view="login-content"></div>'
 			}
 		}
-
 	})
 	.state('allAccess.step1',{
 		url: '/index',
